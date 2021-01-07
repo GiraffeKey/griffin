@@ -7,11 +7,11 @@ function Griffin(options) {
 	return griffin.Griffin({
 		gun: Gun({
 			// peers: ["https://griffin-gun.lib/gun"],
-			peers: [],
+			peers: options?.relays || [],
 		}),
 		SEA: Gun.SEA,
-		relays: (options && options.relays) || [],
-		skynet: (options && options.skynet) || "https://siasky.net",
+		relays: options?.relays || [],
+		skynet: options?.skynet || "https://siasky.net",
 	})
 }
 
